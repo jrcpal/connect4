@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-image: url(largetable.jpg);
+  background-size: cover;
+  min-height: 700px;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* game board table */
+
+#board {
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  transform: translate(-50%);
+  padding: .8rem;
+  width: 60vw;
+  max-width: 500px;
+  height: 410px;
+  border: solid 1px black;
+  box-shadow: 5px 5px black;
+  background-image: url(blue-plastic.jpg);
+}
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+  border-radius: 50%;
+}
+
+#reset {
+  background-image: url(blue-plastic.jpg);
+  color: floralwhite;
+  position: absolute;
+  top: 520px;
+  left: 50%;
+  transform: translate(-50%);
+  border: 1px solid black;
+  box-shadow: 1px 1px black;
+  width: 5rem;
+  font-family: 'Montserrat', sans-serif;
+  display:none;
+}
+
+#reset:hover{
+  box-shadow:0 4px #333333;
+  top: 522px;
+}
+
+.cell {
+  background: floralwhite;
+}
+
+
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.p1 {
+  background-image: url(pieceRed.jpg);
+}
+
+.p2 {
+  background-image: url(pieceBlack.jpg);
+}
+
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+  cursor: pointer;
+}
+
+#column-top td:hover {
+  background-color: gold;
+  cursor: pointer;
+}
+
+
