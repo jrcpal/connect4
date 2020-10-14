@@ -151,7 +151,7 @@ function checkForWin() {
         return true;
       }
     }
-  }
+  };
 };
 
 makeBoard();
