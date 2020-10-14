@@ -55,9 +55,9 @@ h3 {
   transform: translate(-50%);
   border: 1px solid black;
   box-shadow: 1px 1px black;
-  width: 5rem;
+  height: 30px;
+  width: 100px;
   font-family: 'Montserrat', sans-serif;
-  display:none;
 }
 
 #reset:hover{

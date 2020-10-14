@@ -24,29 +24,26 @@ function makeBoard() {
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
 function makeHtmlBoard() {
-  const board = $('#board');
-  board.html('');
+  const board = document.querySelector('#board');
 
   //create the top row of the board where users will drop their pieces
-  const top = document.createElement("tr");
-  top.setAttribute("id", "column-top");
-  top.addEventListener("click", handleClick);
+  const top = $('<tr>').attr('id', 'column-top');
+  top.on('click', handleClick);
 
   for (let x = 0; x < WIDTH; x++) {
-    const headCell = document.createElement("td");
-    headCell.setAttribute("id", x);
-    top.append(headCell);
+    //const topCell = $(`<td id="${x}"`)
+    top.append(`<td id="${x}"`)
   };
   board.append(top);
 
   // create the remaining rows of the actual game board
   for (let y = 0; y < HEIGHT; y++) {
-    const row = document.createElement("tr");
+    const row = $('<tr>')
 
     for (let x = 0; x < WIDTH; x++) {
-      const cell = document.createElement("td");
-      cell.setAttribute("id", `${y}-${x}`);
-      cell.setAttribute("class", "cell")
+      const cell = $('<td>')
+        .attr('id', `${y}-${x}`)
+        .attr('class', 'cell');
       row.append(cell);
     }
     board.append(row);
@@ -91,12 +88,10 @@ function handleClick(evt) {
   // adding the "+" sign makes converts the value from a string to a number
   let x = +evt.target.id;
   let y = lowestOpenRow(x);
-  if (y === null) {
-    return;
-  }
+  if (y === null) return;
 
   board[y][x] = currPlayer;
-  placeInBoard(y, x);
+  placeInBoard(x, y);
 
 
 if (checkForWin()) {
@@ -156,3 +151,8 @@ function checkForWin() {
 
 makeBoard();
 makeHtmlBoard();
+
+
+
+
+
